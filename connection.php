@@ -1,7 +1,10 @@
 <?php
 try {
-	$dbh = new PDO('mysql:dbname=f0940059_home_library;host=localhost', 'f0940059_home_library', 'admin123');
+    // подключаемся к серверу
+    $conn = new PDO('mysql:dbname=f0944000_home_library;host=localhost', 'f0944000_home_library', 'admin123');
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $conn;
 } catch (PDOException $e) {
-	die($e->getMessage());
+    echo "Connection failed: " . $e->getMessage();
 }
 ?>
